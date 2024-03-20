@@ -7,10 +7,16 @@
       <a href="@" class="linkItem">Сообщество</a>
       <a href="@" class="linkItem">Карточки</a>
       <button class="btn">Войти</button>
-      <div class="burgerMenu">
+      <div class="burgerMenu" @click="open">
         <span></span>
         <span></span>
         <span></span>
+      </div>
+      <div class="menu">
+        <div class="menuLink">Главная</div>
+        <div class="menuLink">Сообщество</div>
+        <div class="menuLink">Карточки</div>
+        <div class="menuLink menuBtn">Войти</div>
       </div>
     </div>
   </div>
@@ -18,6 +24,18 @@
 
 <script>
 export default {
+  methods: {
+    open() {
+      let menu = document.querySelector('.menu');
+      if (menu.classList.contains('.open')) {
+        menu.classList.remove('.open');
+        menu.style.display = "none";
+      } else {
+        menu.classList.add('.open');
+        menu.style.display = "flex";
+      }
+    }
+  }
 
 }
 </script>
@@ -66,6 +84,9 @@ export default {
   .burgerMenu {
     display:none;
   }
+  .menu {
+    display: none;
+  }
   @media (max-width: 1150px) {
     .gradient {
       height: 8px;
@@ -95,7 +116,7 @@ export default {
     }
     .logoImg {
       height: 80px;
-      width: 60px;
+      width: 70px;
       margin-left: 25px;
     }
     .linkLine {
@@ -108,21 +129,75 @@ export default {
       display: none;
     }
     .burgerMenu {
+      display: block;
       margin-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
       width: 40px;
       height: 30px;
       position: relative;
+      z-index: 3;
     }
     .burgerMenu:hover {
       cursor: pointer;
     }
     .burgerMenu span {
+      position: absolute;
       width: 100%;
       height: 6px;
       background-color: #590BD9;
+    }
+    .burgerMenu span:nth-child(2) {
+      top: 12px;
+    }
+    .burgerMenu span:nth-child(3) {
+      bottom: 0px;
+    }
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 6px;
+      right: 0px;
+      width: 300px;
+      height: auto;
+      padding-top: 70px;
+      background-color: #FFFFFF;
+      z-index: 2;
+      transition: transform .5s;
+      transform: translateX(0);
+      border-left: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+    .menu.open {
+      transform: translateX(100%);
+    }
+    .menuBtn {
+      color: white;
+      background-color: #7F31FF;
+      font-weight: 900;
+    }
+    .menuLink {
+      font-size: 20px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0px;
+      width: 100%;
+      color: #590BD9;
+    }
+    .menu div:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    .menu div:nth-child(2) {
+      border-top: 1px solid #505050;
+      border-bottom: 1px solid #505050;
+    }
+    .menu div:nth-child(3) {
+      border-bottom: 1px solid #505050;
+    }
+    .menuBtn {
+      color: #FFFFFF;
+      background-color: #7F31FF;
     }
   }
 </style>

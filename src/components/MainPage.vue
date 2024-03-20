@@ -1,7 +1,9 @@
 <template>
     <main-header></main-header>
-    <img class="cloudImg" src="../assets/bigMainPage/bigCloud.png" alt="">
-    <main-block-one></main-block-one>
+    <main>
+      <img class="cloudImg" src="../assets/bigCloud.png" alt="">
+      <main-block-one></main-block-one>
+    </main>
 </template>
 
 <script>
@@ -17,13 +19,32 @@ export default {
   template {
     position: relative;
   }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .cloudImg {
-    display: none;
     top: 215px;
     left: 15%;
     position: absolute;
   }
-  main-block-one {
-    display: none;
+  @media (max-width: 1150px) {
+    .cloudImg {
+    width: 189px;
+    height: 126px;
+    top: 215px;
+    left: 20%;
+    position: absolute;
+    }
+  }
+  @media (max-width: 730px) {
+    .cloudImg {
+    width: 148px;
+    height: 96px;
+    top: 140px;
+    left: 17%;
+    position: absolute;
+  }
   }
 </style>
