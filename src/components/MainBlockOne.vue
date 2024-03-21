@@ -3,7 +3,6 @@
     <p class="blockText">Начни заниматься прямо<br><snap class="blockTextStrong">сейчас</snap></p>
     <button class="blockBtn">Начать</button>
   </div>
-  asdsd
 </template>
 
 <script>
@@ -20,7 +19,7 @@ export default {
     justify-content: center;
     margin-top: 411px;
     width: 100%;
-    height: 735px;
+    height:735px;
     background-size: cover;
     background-image: url("../assets/bigMainBack.png");
   }
@@ -71,12 +70,15 @@ export default {
     background-image: url("../assets/MinMainBack.png");
   }
     .blockText {
-      font-size: 32px;
+    font-size: 39px;
   }
   }
   @media (max-width: 450px) {
     .block {
       height: 250px;
+    }
+    .blockText {
+      font-size: 32px;
     }
   }
 </style>
