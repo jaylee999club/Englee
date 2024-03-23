@@ -5,14 +5,18 @@
       <img class="cubeImg" src="../assets/blueCube.png">
       <img class="coneImg" src="../assets/pinkCone.png">
       <main-block-one></main-block-one>
+      <main-block-two></main-block-two>
+      <img class="bookImg" src="../assets/book.png">
     </main>
 </template>
 
 <script>
 import MainHeader from '@/components/MainHeader.vue';
 import MainBlockOne from '@/components/MainBlockOne.vue';
+import MainBlockTwo from '@/components/MainBlockTwo.vue';
+
 export default {
-  components: { MainHeader, MainBlockOne },
+  components: { MainHeader, MainBlockOne, MainBlockTwo },
 
 }
 </script>
@@ -40,25 +44,33 @@ export default {
     left: 2%;
     top: 1000px;
   }
+  .bookImg {
+    margin-top: 270px;
+  }
   @media (max-width: 1150px) {
     .cloudImg {
-    width: 189px;
-    height: 126px;
-    top: 115px;
-    left: 20%;
-    position: absolute;
-  }
+      width: 189px;
+      height: 126px;
+      top: 115px;
+      left: 20%;
+      position: absolute;
+    }
     .cubeImg {
-    width: 119px;
-    height: 134px;
-    right: 1%;
-    top: 210px;
-  }
+      width: 119px;
+      height: 134px;
+      right: 1%;
+      top: 210px;
+    }
     .coneImg {
-    width: 141px;
-    height: 151px;
-    top: 680px;
-  }
+      width: 141px;
+      height: 151px;
+      top: 680px;
+    }
+    .bookImg {
+      width: 345px;
+      height: 359px;
+      margin-top: 270px;
+    }
   }
   @media (max-width: 730px) {
     .cloudImg {
@@ -74,6 +86,11 @@ export default {
     .coneImg {
       top: 500px;
     }
+    .bookImg {
+      width: 177px;
+      height: 176px;
+      margin-top: 170px;
+    }
   }
   @media (max-width: 450px) {
     .cubeImg {
@@ -88,5 +105,10 @@ export default {
       width: 88px;
       height: 86px;
     } 
+    .bookImg {
+      width: 177px;
+      height: 176px;
+      margin-top: 100px;
+    }
   }
 </style>
